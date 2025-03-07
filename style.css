@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 0.9em;
+    color: #888;
+}
+
+#modelSelect {
+    padding: 10px 15px;
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#modelSelect:hover {
+    background: #333;
+    border-color: #555;
+}
+
+#chatContainer {
+    flex: 1;
+    overflow-y: auto;
+    margin: 20px 0;
+    padding: 20px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+    background: linear-gradient(145deg, #2c2c2c, #222);
+    margin-left: 20%;
+    border-left: 4px solid #00ff87;
+}
+
+.bot-message {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    margin-right: 20%;
+    border-left: 4px solid #60efff;
+}
+
+.message-actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none;
+}
+
+.message:hover .message-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.action-button:hover {
+    color: #fff;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#userInput {
+    flex: 1;
+    padding: 15px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    resize: none;
+    height: 60px;
+    transition: border-color 0.3s ease;
+}
+
+#userInput:focus {
+    border-color: #00ff87;
+    outline: none;
+}
+
+#sendButton {
+    padding: 0 25px;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#sendButton:hover {
+    transform: scale(1.05);
+}
+
+.copied-tooltip {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00ff87;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: fadeInOut 1.5s ease;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
