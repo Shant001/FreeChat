@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                     method: "POST",
                     headers: {
-                        "Authorization": `Bearer ${config.OPENROUTER_API_KEY}`,
+                        "Authorization": `Bearer ${config.QWEN_API_KEY}`,
                         "HTTP-Referer": config.SITE_URL,
                         "X-Title": config.SITE_NAME,
                         "Content-Type": "application/json"
@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
+                        "model": "deepseek/deepseek-r1-zero:free",
                         "messages": [{ "role": "user", "content": message }]
                     })
                 });
